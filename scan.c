@@ -3229,15 +3229,15 @@ bool fe_supports_scan(int fd, scantype_t type, struct dvb_frontend_info info) {
         verbose("           %s\n", delsys <= SYS_DVBC_ANNEX_C?dname[delsys]:"???");
         switch(type) {
            case SCAN_TERRESTRIAL:
-              if (delsys == SYS_DVBT || delsys == SYS_DVBT2)
+              if (delsys == SYS_DVBT || delsys == SYS_DVBT2 || delsys == SYS_ISDBT)
                  result = true;
               break;
            case SCAN_CABLE:
-              if (delsys == SYS_DVBC_ANNEX_AC || delsys == SYS_DVBC2)
+              if (delsys == SYS_DVBC_ANNEX_AC || delsys == SYS_DVBC2 || delsys == SYS_ISDBT)
                  result = true;
               break;
            case SCAN_SATELLITE:
-              if (delsys == SYS_DVBS || delsys == SYS_DVBS2)
+              if (delsys == SYS_DVBS || delsys == SYS_DVBS2 || delsys == SYS_ISDBS)
                  result = true;
               break;
            case SCAN_TERRCABLE_ATSC:
